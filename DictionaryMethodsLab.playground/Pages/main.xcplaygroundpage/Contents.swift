@@ -1,9 +1,9 @@
 /*: Outline
 
  # Iterating over a Dictionary
-
+ 
  ### Readings associated with this lab
-
+ 
  * [Dictionary](https://github.com/learn-co-curriculum/swift-dictionary-readme)
  * [Iterating over a Dictionary](https://github.com/learn-co-curriculum/swift-dictionaryIteration-readme)
  * [Dictionary - Methods](https://github.com/learn-co-curriculum/swift-dictionaryMethods-readme)
@@ -122,15 +122,15 @@
 
 /*: question15
  ### 15. We forgot to add a really cool Jedi to the list of Jedi: Aayla Secura. Unfortunately, the code below is broken: It doesn't appear to be adding Aayla Secura to the array. Can you fix it so that it does? (The code has been commented out, since it won't even compile until you've answered the questions above. Start by uncommenting the code, but that's not all you need to fix!)
-
+ 
  After you've fixed the error, print out the contents of the "Jedi" key in `starWarsCharacters` to make sure your code works.
  */
 
 /* Start by uncommenting this block of code
- if var jedi = starWarsCharacters["Jedi"] {
- jedi.append("Aayla Secura")
- }
- */
+if var jedi = starWarsCharacters["Jedi"] {
+    jedi.append("Aayla Secura")
+}
+*/
 
 
 
@@ -140,12 +140,12 @@
  */
 
 /*
- if let heroes = starWarsCharacters["Heros"] {
- for hero in heroes {
- print(hero)
- }
- }
- */
+if let heroes = starWarsCharacters["Heros"] {
+    for hero in heroes {
+        print(hero)
+    }
+}
+*/
 
 
 
