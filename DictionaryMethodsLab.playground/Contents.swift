@@ -88,6 +88,8 @@ var updatedSWDictionary = starWarsCharacters.updateValue(starWarsGangsters, forK
 // returned nil because it did add, printing updatedSWDictionary will return nil
 print(starWarsCharacters)
 // prints with the gangsters within the dictionary
+// starWarsCharacters["Gangsters"] = starWarsGangsters
+// simple way to add
 /*: question9
  ### 9. Use the dictionary's `keys` property to print out all the keys in your dictionary to the console, one line at a time (hint: use iteration). Do you see all four of the keys you created above?
  */
@@ -138,6 +140,8 @@ var starWarsJedi: [String] = [
 /*: question13
  ### 13. Add the variable `starWarsJedi` to the `starWarsCharacter` dictionary using the key "Jedi". Use the `updateValue(_:forKey:)` method to do this. If a new key was added, print "Added Jedi key" to the console; otherwise, print "Updated Jedi key" to the console.
  */
+/*
+// Refactor so there's a cleaner way to check if it's nil. Ternary, and also if isEmpty?
 if let jedisInDict = starWarsCharacters["Jedi"] {
     print("Jedi's are already there")
     print(starWarsCharacters["Jedi"]!)
@@ -149,11 +153,19 @@ if let jedisInDict = starWarsCharacters["Jedi"] {
         print("Updated Jedi Key")
     }
 }
+*/
 
-// Refactor so there's a cleaner way to check if it's nil. Ternary, and also if isEmpty?
+// Refactored vers
+if starWarsCharacters.updateValue(starWarsJedi, forKey: "Jedi") == nil {
+    print("Added Jedi key to dictionary")
+} else {
+    print("Updated Jedi key")
+}
 /*: question14
  ### 14. I can't remember if we added the a key/value pair for "Bounty Hunters" or not. Regardless, let's not worry about them for now. Use the `removeValueForKey()` method to remove "Bounty Hunters" from `starWarsCharacters`. Print the message "Removed Bounty Hunters" if the key was present in the dictionary, or "Bount Hunters did not exist" if it wasn't.
  */
+/*
+// Refactor this
 if let bountyHuntersInDict = starWarsCharacters["Bounty Hunters"] {
     print("Bounty Hunters' are already there")
     print(starWarsCharacters["Bounty Hunters"]!)
@@ -165,6 +177,14 @@ if let bountyHuntersInDict = starWarsCharacters["Bounty Hunters"] {
         print("Removed Bounty Hunters Key")
     }
 }
+*/
+
+// Refactored
+if starWarsCharacters.removeValue(forKey: "Bounty Hunters") != nil {
+    print("Removed Bounty Huners")
+} else {
+    print("Bounty Hunters did not exist")
+}
 /*: question15
  ### 15. We forgot to add a really cool Jedi to the list of Jedi: Aayla Secura. Unfortunately, the code below is broken: It doesn't appear to be adding Aayla Secura to the array. Can you fix it so that it does? (The code has been commented out, since it won't even compile until you've answered the questions above. Start by uncommenting the code, but that's not all you need to fix!)
 
@@ -175,9 +195,15 @@ if var jediThatDiedInFelucia = starWarsCharacters["Jedi"] {
     starWarsCharacters["Jedi"] = jediThatDiedInFelucia
 }
 
+// Two ways to print
+/* Method 1
 let checkForMasterAayla = starWarsCharacters["Jedi"]
-
 print(checkForMasterAayla!)
+*/
+
+if let jediThatDiedInFelucia = starWarsCharacters["Jedi"] {
+    print(jediThatDiedInFelucia)
+}
 /*: question16
  ### 16. We want to print out the names of our _Star Wars_ heroes line-by-line. Unfortunately, the code below isn't working correctly -- nothing gets printed! Can you fix it so that our heroes are printed out? (Again, the code has been commented out so that it doesn't interfere with earlier questions until they have been completed. Start by uncommenting the code, but there's still another bug!)
  */
