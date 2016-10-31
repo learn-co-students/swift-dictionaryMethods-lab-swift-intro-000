@@ -11,90 +11,117 @@
 /*: question1
  ### 1. You'll first need to create a few arrays that you will use in subsequent questions in this lab. First, create an `Array` _variable_ called `starWarsHeroes` that contains the names of the heroes of _Star Wars_. These heroes are: Luke Skywalker, Princess Leia, Han Solo, and Rey.
  */
-// write your code here
+/*
+var starWarsHeroes: [String]()
+starWarsHeroes = [
+    "Luke Skywalker",
+    "Princess Leia",
+    "Han Solo",
+    "Rey"
+]
 
+var starWarsHeroes: [String] = [
+ "Luke SkyWallker",
+ "Princess Leia",
+ "Han Solo",
+ "Rey"
+]
+ 
+*/
 
-
-
+var starWarsHeroes = [
+    "Luke Skywalker",
+    "Princess Leia",
+    "Han Solo",
+    "Rey"
+]
 /*: question2
  ### 2. Now create another variable `Array` called `starWarsVillains` that contains the villains of _Star Wars_: Darth Vader and Emperor Palpatine.
  */
-// write your code here
-
-
-
-
+var starWarsVillains = [
+    "Darth Vader",
+    "Emperor Palpatine"
+]
 /*: question3
  ### 3. Finally, create a third variable `Array` called `starWarsDroids` that contains the droids of _Star Wars_: R2-D2, C-3P0, IG-88, and BB-8 (the cutest droid of them all).
  */
-// write your code here
-
-
-
-
+var starWarsDroids: [String] = [
+    "R2-D2",
+    "C-3P0",
+    "IG-88",
+    "BB-8"
+]
 /*: question4
  ### 4. Darn! We forgot to add Kylo Ren, the newest _Star Wars_ villain. Add "Kylo Ren" to `starWarsVillains` using the `append()` method.
  */
-// write your code here
-
-
-
-
+//starWarsVillains += ["Kylo Ren"]
+starWarsVillains.append("Kylo Ren")
+print(starWarsVillains)
 /*: question5
  ### 5. On second thought, we don't really care that much about IG-88. Remove him from the `starWarsDroids` array using the `removeAtIndex()` method. (What index is "IG-88" at?)
  */
-// write your code here
-
-
-
-
+//starWarsDroids -= ["IG-88"] // Returns shit ton of errors. Not a good and safe way to do so.
+starWarsDroids.remove(at: 2)
+print(starWarsDroids)
 /*: question6
  ### 6. Excellent! We want to store these arrays in a dictionary. Create a _variable_ dictionary called `starWarsCharacters` with the following keys: "Heroes", "Villains", and "Droids". Assign the appropriate variables that you created in the previous questions to these keys when you initialize the dictionary.
  */
-// write your code here
+// var starWarsDictionary: [String: String]()
+var starWarsDictionary: [String: Array] = [
+    "Heroes": starWarsHeroes,
+    "Villains": starWarsVillains,
+    "Droids": starWarsDroids
+]
 
-
-
-
+//print(starWarsDictionary)
 /*: question7
  ### 7. We forgot some characters! There are a lot of ne'er-do-wells in the _Star Wars_ universe, too. Create a variable array called `starWarsGangsters` with the names of these two shady characters: Watto, Jabba the Hutt.
  */
-// write your code here
-
-
-
-
+var starWarsGangsters: [String] = [
+    "Watto",
+    "Jabba the Hutt"
+]
 /*: question8
  ### 8. Insert `starWarsGangsters` into your `starWarsCharacters` dictionary with the key "Gangsters". Use subscript notation.
  */
-// write your code here
-
-
-
-
+var updatedSWDictionary = starWarsDictionary.updateValue(starWarsGangsters, forKey: "Gangsters")
+// returned nil because it did add, printing updatedSWDictionary will return nil
+print(starWarsDictionary)
+// prints with the gangsters within the dictionary
 /*: question9
  ### 9. Use the dictionary's `keys` property to print out all the keys in your dictionary to the console, one line at a time (hint: use iteration). Do you see all four of the keys you created above?
  */
-// write your code here
+let characterTraits = Array(starWarsDictionary.keys)
+print(characterTraits)
+// prints the keys without iterating through it
 
+for characters in starWarsDictionary.values {
+    print(characters)
+}
+// iterates, then prints the values without the keys
 
+for traits in starWarsDictionary.keys {
+    print(traits)
+}
+// iterates, then prints the keys without the values
 
+func printsKeys(dict: Dictionary<String, Array<Any>>) {
+    for charactersTrait in dict.keys {
+        print("starWarsDictionary has \(charactersTrait)")
+    }
+    
+    print("Every typecast you could possibly want!")
+}
 
+printsKeys(dict: starWarsDictionary)
 /*: question10
  ### 10. Just for good measure, print the number of keys in the dictionary to the console using the `count` method. Do you see `4` printed to the console?
  */
-// write your code here
-
-
-
-
+print(starWarsDictionary.count)
+// counts for the number of keys
 /*: question11
  ### 11. Use an if statement and the dictionary's `isEmpty` property to print "The dictionary is empty!" to the console if it is empty; otherwise, print "There are <Count> items in the dictionary." What do you expect to see in the console? What _do_ you see?
  */
-// write your code here
-
-
-
 
 /*: question12
  ### 12. We forgot some more pretty important characters. Create another variable array called `starWarsJedi`. Add the names of these important _Star Wars_ Jedi: Yoda, Obi-Wan Kenobi, Mace Windu.
