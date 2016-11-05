@@ -12,7 +12,7 @@
  ### 1. You'll first need to create a few arrays that you will use in subsequent questions in this lab. First, create an `Array` _variable_ called `starWarsHeroes` that contains the names of the heroes of _Star Wars_. These heroes are: Luke Skywalker, Princess Leia, Han Solo, and Rey.
  */
 // write your code here
-
+var starWarsHeroes = ["Luke SKywalker", "Princess Leia", "Han Solo", "Rey"]
 
 
 
@@ -20,7 +20,9 @@
  ### 2. Now create another variable `Array` called `starWarsVillains` that contains the villains of _Star Wars_: Darth Vader and Emperor Palpatine.
  */
 // write your code here
-
+var starWarsWillains = [
+  "Darth Vader", "Emperior Palpatine"
+]
 
 
 
@@ -29,7 +31,7 @@
  */
 // write your code here
 
-
+var starWarsDroids = ["R2-D2", "C-3P0", "IG-88", "BB-8"]
 
 
 /*: question4
@@ -37,7 +39,7 @@
  */
 // write your code here
 
-
+starWarsWillains.append("Kylo Ren")
 
 
 /*: question5
@@ -45,14 +47,20 @@
  */
 // write your code here
 
-
+var index = starWarsDroids.index(of: "IG-88")
+var nameOfRemovedDroid = starWarsDroids.remove(at: 2)
+print(nameOfRemovedDroid)
 
 
 /*: question6
  ### 6. Excellent! We want to store these arrays in a dictionary. Create a _variable_ dictionary called `starWarsCharacters` with the following keys: "Heroes", "Villains", and "Droids". Assign the appropriate variables that you created in the previous questions to these keys when you initialize the dictionary.
  */
 // write your code here
-
+var starWarsCharacters = [
+    "Heroes": starWarsHeroes,
+    "Villains": starWarsWillains,
+    "Droids": starWarsDroids
+]
 
 
 
@@ -60,7 +68,7 @@
  ### 7. We forgot some characters! There are a lot of ne'er-do-wells in the _Star Wars_ universe, too. Create a variable array called `starWarsGangsters` with the names of these two shady characters: Watto, Jabba the Hutt.
  */
 // write your code here
-
+var starWarsGangsters = ["Watto", "Jabba the Hutt"]
 
 
 
@@ -68,7 +76,8 @@
  ### 8. Insert `starWarsGangsters` into your `starWarsCharacters` dictionary with the key "Gangsters". Use subscript notation.
  */
 // write your code here
-
+starWarsCharacters.updateValue(starWarsGangsters, forKey: "Gangsters")
+print(starWarsCharacters["Gangsters"])
 
 
 
@@ -76,7 +85,9 @@
  ### 9. Use the dictionary's `keys` property to print out all the keys in your dictionary to the console, one line at a time (hint: use iteration). Do you see all four of the keys you created above?
  */
 // write your code here
-
+for (keys, values) in starWarsCharacters {
+    print(keys)
+}
 
 
 
@@ -84,6 +95,7 @@
  ### 10. Just for good measure, print the number of keys in the dictionary to the console using the `count` method. Do you see `4` printed to the console?
  */
 // write your code here
+print(starWarsCharacters.keys.count)
 
 
 
@@ -93,13 +105,18 @@
  */
 // write your code here
 
-
+if starWarsCharacters.isEmpty {
+    print("The dictionary is empty!")
+} else {
+    print("There are \(starWarsCharacters.count) items in the dictionary")
+}
 
 
 /*: question12
  ### 12. We forgot some more pretty important characters. Create another variable array called `starWarsJedi`. Add the names of these important _Star Wars_ Jedi: Yoda, Obi-Wan Kenobi, Mace Windu.
  */
 // write your code here
+var starWarsJedi = ["Yoda", "Obi-Wan Kenobi", "Mace Windu"]
 
 
 
@@ -109,7 +126,11 @@
  */
 // write your code here
 
-
+if starWarsCharacters.updateValue(starWarsJedi, forKey: "Jedi") == nil {
+    print("Added Jedi")
+} else {
+    print("Updated Jedi key")
+}
 
 
 /*: question14
@@ -117,7 +138,11 @@
  */
 // write your code here
 
-
+if starWarsCharacters.removeValue(forKey: "Bounty Hunters") == nil {
+    print("Bounty Hunters did not exist")
+} else {
+    print("Removed Bounty Hunters")
+}
 
 
 /*: question15
@@ -126,11 +151,15 @@
  After you've fixed the error, print out the contents of the "Jedi" key in `starWarsCharacters` to make sure your code works.
  */
 
-/* Start by uncommenting this block of code
+// Start by uncommenting this block of code
  if var jedi = starWarsCharacters["Jedi"] {
  jedi.append("Aayla Secura")
+ starWarsCharacters["Jedi"] = jedi
+    print(starWarsCharacters["Jedi"])
  }
- */
+
+
+
 
 
 
@@ -141,14 +170,24 @@
 
 /*
  if let heroes = starWarsCharacters["Heros"] {
- for hero in heroes {
- print(hero)
- }
- }
- */
+    for hero in heroes {
+        print(hero)
+    }
+ } else {
+        print("There are no heroes")
+}
 
 
 
+*/
+
+var x = starWarsCharacters["Heroes"]
+
+if let heroes = starWarsCharacters["Heroes"] {
+    for hero in heroes {
+        print(hero)
+    }
+}
 
 /*:
  [Solution](solution)
