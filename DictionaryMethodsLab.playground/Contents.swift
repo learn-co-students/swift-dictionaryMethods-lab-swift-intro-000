@@ -13,7 +13,7 @@
  */
 // write your code here
 
-
+var starWarsHeroes = ["Luke Skywalker", "Princess Leia", "Han Solo", "Rey"]
 
 
 /*: question2
@@ -21,14 +21,14 @@
  */
 // write your code here
 
-
+var starWarsVillians = ["Darth Vader", "Emperor Palpatine"]
 
 
 /*: question3
  ### 3. Finally, create a third variable `Array` called `starWarsDroids` that contains the droids of _Star Wars_: R2-D2, C-3P0, IG-88, and BB-8 (the cutest droid of them all).
  */
 // write your code here
-
+ var starWarsDroids = ["R2-D2", "C-3P0", "IG-88", "BB-8"]
 
 
 
@@ -37,6 +37,7 @@
  */
 // write your code here
 
+starWarsVillians.append("Kylo Ren")
 
 
 
@@ -44,7 +45,7 @@
  ### 5. On second thought, we don't really care that much about IG-88. Remove him from the `starWarsDroids` array using the `removeAtIndex()` method. (What index is "IG-88" at?)
  */
 // write your code here
-
+starWarsDroids.remove(at: 2)
 
 
 
@@ -53,23 +54,22 @@
  */
 // write your code here
 
+var starWarsCharacters = [String : [String]]()
 
-
-
+starWarsCharacters = [ "Heroes" : starWarsHeroes, "Villians" : starWarsVillians, "Droids" : starWarsDroids]
 /*: question7
  ### 7. We forgot some characters! There are a lot of ne'er-do-wells in the _Star Wars_ universe, too. Create a variable array called `starWarsGangsters` with the names of these two shady characters: Watto, Jabba the Hutt.
  */
 // write your code here
 
-
-
+var starWarsGangsters = ["Watto", "Jabba the Hutt"]
 
 /*: question8
  ### 8. Insert `starWarsGangsters` into your `starWarsCharacters` dictionary with the key "Gangsters". Use subscript notation.
  */
 // write your code here
 
-
+starWarsCharacters["Gangsters"] = starWarsGangsters
 
 
 /*: question9
@@ -77,7 +77,9 @@
  */
 // write your code here
 
-
+for (key, values) in starWarsCharacters {
+    print(key)
+}
 
 
 /*: question10
@@ -85,30 +87,32 @@
  */
 // write your code here
 
-
-
-
+print(starWarsCharacters.count)
 /*: question11
  ### 11. Use an if statement and the dictionary's `isEmpty` property to print "The dictionary is empty!" to the console if it is empty; otherwise, print "There are <Count> items in the dictionary." What do you expect to see in the console? What _do_ you see?
  */
 // write your code here
 
 
-
+if starWarsCharacters.isEmpty {
+    print("The dictionary is empty!")
+} else {
+    print("There are \(starWarsCharacters.count) items in the dictionary")
+}
 
 /*: question12
  ### 12. We forgot some more pretty important characters. Create another variable array called `starWarsJedi`. Add the names of these important _Star Wars_ Jedi: Yoda, Obi-Wan Kenobi, Mace Windu.
  */
 // write your code here
 
-
+var starWarsJedi = ["Yoda", "Obi-Wan Kenobi", "Mac Windu"]
 
 
 /*: question13
  ### 13. Add the variable `starWarsJedi` to the `starWarsCharacter` dictionary using the key "Jedi". Use the `updateValue(_:forKey:)` method to do this. If a new key was added, print "Added Jedi key" to the console; otherwise, print "Updated Jedi key" to the console.
  */
 // write your code here
-
+starWarsCharacters.updateValue(starWarsJedi, forKey: "Jedi")
 
 
 
@@ -117,7 +121,11 @@
  */
 // write your code here
 
-
+if starWarsCharacters.removeValue(forKey: "Bounty Hunters") != nil{
+    print("Removed Bounty Hunters")
+} else {
+    print("Bounty Hunters did not exist")
+}
 
 
 /*: question15
@@ -126,11 +134,18 @@
  After you've fixed the error, print out the contents of the "Jedi" key in `starWarsCharacters` to make sure your code works.
  */
 
-/* Start by uncommenting this block of code
- if var jedi = starWarsCharacters["Jedi"] {
- jedi.append("Aayla Secura")
- }
- */
+// Start by uncommenting this block of code
+
+if var jedi = starWarsCharacters["Jedi"] {
+    jedi.append("Aayla Secura")
+    
+    starWarsCharacters["Jedi"] = jedi
+}
+
+for currentJedi in starWarsCharacters["Jedi"]!
+{
+    print(currentJedi)
+}
 
 
 
@@ -139,13 +154,16 @@
  ### 16. We want to print out the names of our _Star Wars_ heroes line-by-line. Unfortunately, the code below isn't working correctly -- nothing gets printed! Can you fix it so that our heroes are printed out? (Again, the code has been commented out so that it doesn't interfere with earlier questions until they have been completed. Start by uncommenting the code, but there's still another bug!)
  */
 
-/*
- if let heroes = starWarsCharacters["Heros"] {
- for hero in heroes {
- print(hero)
- }
- }
- */
+
+ if let heroes = starWarsCharacters["Heroes"]
+ {
+    for hero in heroes
+    {
+        print(hero)
+    }
+}
+
+
 
 
 
