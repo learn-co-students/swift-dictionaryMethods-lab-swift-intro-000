@@ -26,7 +26,7 @@ class DictionaryMethodsTests: XCTestCase {
         XCTAssertEqual(testClass.starWarsHeroes, expectedResult)
     }
     
-    func testStarWarsVillians() {
+    func testStarWarsVillains() {
         let expectedResult = ["Darth Vader", "Emperor Palpatine"]
         XCTAssertEqual(testClass.starWarsVillains, expectedResult)
     }
