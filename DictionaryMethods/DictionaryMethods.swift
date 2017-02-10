@@ -13,16 +13,18 @@ class DictionaryMethods {
     // Questions #1, #2, #3, #6 and #7
      var starWarsHeroes = ["Luke Skywalker", "Princess Leia", "Han Solo", "Rey"]
     
-     var starWarsVillians = ["Darth Vader", "Emporer Palpatine"]
+     var starWarsVillains = ["Darth Vader", "Emperor Palpatine"]
     
-     var starWarsDroids = ["R2-D2", "C-3PO", "IG-88", "BB-8"]
+     var starWarsDroids = ["R2-D2", "C-3P0", "IG-88", "BB-8"]
+    
+     var starWarsCharacters: [String : [String]] = [:]
     
      var starWarsGangsters = ["Watto", "Jabba the Hutt"]
 
     
     // Question #4
     func addKyloRen() {
-        starWarsVillians.append("Kylo Ren")
+        starWarsVillains.append("Kylo Ren")
     }
     
     
@@ -30,7 +32,7 @@ class DictionaryMethods {
     // Question #5
     func remove(droid: String) -> Bool {
         if starWarsDroids.contains(droid) {
-           starWarsDroids = starWarsDroids.filter() { $0 != droid }
+           starWarsDroids = starWarsDroids.filter({ $0 != droid })
             return true
             } else {
             return false
@@ -40,11 +42,11 @@ class DictionaryMethods {
     
     
     // Question #6
-    var starWarsCharacters: [String : [String]]
     
     func createStarWarsCharacters() {
-        if starWarsCharacters.isEmpty {
-            starWarsCharacters.append["Heroes" : [starWarsHeroes], "Villians" : [starWarsVillians], "Droids" : [starWarsDroids]]
+            starWarsCharacters["Heroes"] = starWarsHeroes
+            starWarsCharacters["Villians"] = starWarsVillains
+            starWarsCharacters["Droids"] = starWarsDroids
         }
     }
     
@@ -52,7 +54,7 @@ class DictionaryMethods {
     
     // Question #7
     func createStarWarsGangsters() {
-        
+        starWarsCharacters.updateValue(starWarsGangsters, forKey: "Gangsters")
     }
     
     
@@ -62,18 +64,34 @@ class DictionaryMethods {
         var sentence = "--STAR WARS CHARACTERS--"
         
         for (type, names) in characters {
-            sentence += "\n\(type.uppercased())\n"
-        }
-        for names in characters {
+            sentence += "\n"
+            sentence += "\(type.uppercased())"
             
+        for (number, value) in names.enumerated() {
+            sentence += "\n"
+            sentence += "\(number + 1). \(value)"
         }
+    }
+        return sentence
+        
     }
     
     
     
     // Question #9
     func addHearts() {
-        
+        for (type, names) in starWarsCharacters {
+            var hearts = names
+            
+            for (index, value) in names.enumerated() {
+                if value.contains("o") {
+                    let heartsName = value.replacingOccurrences(of: "o", with: "❤️")
+                    
+                     hearts[index] = heartsName
+                }
+            }
+          starWarsCharacters[type] = hearts
+        }
     }
     
     
