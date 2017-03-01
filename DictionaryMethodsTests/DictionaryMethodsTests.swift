@@ -69,7 +69,7 @@ class DictionaryMethodsTests: XCTestCase {
         
         XCTAssertEqual(gangsters, testClass.starWarsGangsters)
     }
-    
+
     func testDescription() {
         testClass.createStarWarsCharacters()
         testClass.createStarWarsGangsters()
