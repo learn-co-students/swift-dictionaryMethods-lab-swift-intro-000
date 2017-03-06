@@ -73,7 +73,7 @@ class DictionaryMethodsTests: XCTestCase {
     func testDescription() {
         testClass.createStarWarsCharacters()
         testClass.createStarWarsGangsters()
-        let description = testClass.description(characters: testClass.starWarsCharacters)
+        let description = testClass.description(character: testClass.starWarsCharacters)
         
         XCTAssertTrue(description.contains("HEROES"))
         XCTAssertTrue(description.contains("VILLAINS"))
