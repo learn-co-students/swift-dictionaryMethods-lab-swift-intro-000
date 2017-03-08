@@ -157,7 +157,7 @@
 				TargetAttributes = {
 					7D0D30DB1E14528000D9B09E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3E2QGNXM7N;
+						DevelopmentTeam = M6K3JJ88Q3;
 						ProvisioningStyle = Automatic;
 					};
 					7D0D30EF1E14528000D9B09E = {
@@ -351,7 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3E2QGNXM7N;
+				DEVELOPMENT_TEAM = M6K3JJ88Q3;
 				INFOPLIST_FILE = DictionaryMethods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JimCampagno.Swift.DictionaryMethods;
@@ -364,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3E2QGNXM7N;
+				DEVELOPMENT_TEAM = M6K3JJ88Q3;
 				INFOPLIST_FILE = DictionaryMethods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JimCampagno.Swift.DictionaryMethods;
@@ -422,6 +422,7 @@
 				7D0D30FB1E14528000D9B09E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D0D30FC1E14528000D9B09E /* Build configuration list for PBXNativeTarget "DictionaryMethodsTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				7D0D30FE1E14528000D9B09E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
