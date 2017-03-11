@@ -10,7 +10,7 @@ import Foundation
 
 class DictionaryMethods {
     
-    // Questions #1, #2, #3, #6 and #7
+    
     var starWarsHeroes: [String] = [
         "Luke Skywalker",
         "Princess Leia",
@@ -25,6 +25,15 @@ class DictionaryMethods {
         "BB-8"
     ]
     
+    var starWarsGangsters: [String] = [
+        "Watto",
+        "Jabba the Hutt"
+        ]
+    
+    func createStarWarsGangsters() {
+        starWarsCharacters["Gangsters"] = starWarsGangsters
+    }
+    
     var starWarsCharacters: [String: [String]] = [:]
     
     func createStarWarsCharacters() {
@@ -38,16 +47,10 @@ class DictionaryMethods {
         "Emperor Palpatine"
     ]
     
-
-    
-    // Question #4
     func addKyloRen() {
         starWarsVillains.append("Kylo Ren")
     }
     
-    
-    
-    // Question #5
     func remove(droid: String) -> Bool {
         if let droidIndex = starWarsDroids.index(of: droid) {
             starWarsDroids.remove(at: droidIndex)
@@ -57,26 +60,30 @@ class DictionaryMethods {
         return false
     }
     
+    func description(characters: [String: [String]]) -> String {
+        var result = "--Star Wars Characters--\n"
+        
+        for (type, character) in characters {
+            result += "\(type.uppercased())\n"
+            for (index, character) in character.enumerated() {
+                result += "\(index + 1). \(character)\n"
+            }
+        }
+        
+        return result
+    }
     
-    
-    // Question #6
-   
-    
-    
-    
-    // Question #7
-   
-    
-    
-    
-    // Question #8
-    
-    
-    
-    
-    // Question #9
-    
-    
-    
+    func addHearts() {
+        for (type, names) in starWarsCharacters {
+            var newNames = names
+            for (index, name) in newNames.enumerated() {
+                if name.contains("o") {
+                    let newName = name.replacingOccurrences(of: "o", with: "❤️")
+                    newNames[index] = newName
+                }
+            }
+            starWarsCharacters[type] = newNames
+        }
+    }
     
 }
