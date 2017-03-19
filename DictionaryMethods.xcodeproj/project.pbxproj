@@ -422,6 +422,7 @@
 				7D0D30FB1E14528000D9B09E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D0D30FC1E14528000D9B09E /* Build configuration list for PBXNativeTarget "DictionaryMethodsTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				7D0D30FE1E14528000D9B09E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
