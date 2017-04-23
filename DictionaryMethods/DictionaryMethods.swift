@@ -24,20 +24,12 @@ class DictionaryMethods {
     
 
     func remove(droid: String) -> Bool {
-        var droidToRemove: Int?
-        for (index, droids) in starWarsDroids.enumerated() {
-            if droid == droids {
-                droidToRemove = index
-            }
-        }
-        
-        if let droid = droidToRemove {
-            starWarsDroids.remove(at: droid)
+        if let index = starWarsDroids.index(of: droid) {
+            starWarsDroids.remove(at: index)
             return true
         } else {
             return false
         }
-        
     }
     
     
@@ -69,40 +61,16 @@ class DictionaryMethods {
     }
     
     func addHearts() {
-        var modifiedValue = String()
-        
-        for (key,value) in starWarsCharacters {
-            if var value = starWarsCharacters[key] {
-                
-                // You can edit the array here
-                //value.append("Joe")
-                
-                for (index, character) in value.enumerated() {
-                    //print(character)
-                    if character.contains("o") {
-                        
-                        // Store a copy of the character to modify
-                        modifiedValue = character
-                        for char in character.characters {
-                            // Access char
-                            if var i = modifiedValue.characters.index(of: "o") {
-                                
-                                modifiedValue.remove(at: i )
-                                modifiedValue.insert("❤️", at: i)
-                                value[index] = modifiedValue
-                            }
-                        }
-                        
-                        
-                        
-                    }
+        for (type, names) in starWarsCharacters {
+            var newNames = names
+            for (index, name) in newNames.enumerated() {
+                if name.contains("o") {
+                    let newName = name.replacingOccurrences(of: "o", with: "❤️")
+                    newNames[index] = newName
                 }
-                
-                starWarsCharacters[key] = value
-                print(value)
             }
+            starWarsCharacters[type] = newNames
         }
-        
     }
     
     
