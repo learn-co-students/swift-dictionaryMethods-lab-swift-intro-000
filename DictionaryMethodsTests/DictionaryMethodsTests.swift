@@ -22,7 +22,7 @@ class DictionaryMethodsTests: XCTestCase {
     }
     
     func testStarWarsHeroes() {
-        let expectedResult = ["Luke Skywalker", "Princess Leia", "Han Solo", "Rey"]
+        let expectedResult = ["Luke Skywalker", "Princes Leia", "Han Solo", "Rey"]
         XCTAssertEqual(testClass.starWarsHeroes, expectedResult)
     }
     
@@ -32,7 +32,7 @@ class DictionaryMethodsTests: XCTestCase {
     }
     
     func testStarWarsDroids() {
-        let expectedResult = ["R2-D2", "C-3P0", "IG-88", "BB-8"]
+        let expectedResult = ["R2-D2", "C-3PO", "IG-88", "BB-8"]
         XCTAssertEqual(testClass.starWarsDroids, expectedResult)
     }
     
