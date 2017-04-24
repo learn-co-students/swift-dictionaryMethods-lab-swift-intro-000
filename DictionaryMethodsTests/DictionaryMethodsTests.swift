@@ -81,7 +81,7 @@ class DictionaryMethodsTests: XCTestCase {
         XCTAssertTrue(description.contains("DROIDS"))
         XCTAssertTrue(description.contains("3. Han Solo"))
         XCTAssertTrue(description.contains("2. Emperor Palpatine"))
-        XCTAssertTrue(description.contains("2. C-3P0"))
+        XCTAssertTrue(description.contains("2. C-3PO"))
     }
     
     func testAddHearts() {
