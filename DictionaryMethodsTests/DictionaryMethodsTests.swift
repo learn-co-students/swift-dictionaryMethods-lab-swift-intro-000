@@ -42,10 +42,10 @@ class DictionaryMethodsTests: XCTestCase {
     }
     
     func testRemoveDroid() {
-        let expectedFalse = testClass.remove(droid: "Blooper")
+        let expectedFalse = testClass.removeDroid(droid: "Blooper")
         XCTAssertFalse(expectedFalse, "Blooper doesn't exist as a droid, it should return false.")
         
-        let expectedTrue = testClass.remove(droid: "R2-D2")
+        let expectedTrue = testClass.removeDroid(droid: "R2-D2")
         XCTAssertTrue(expectedTrue, "R2-D2 should have been removed and the function should return true.")
         
         XCTAssertFalse(testClass.starWarsDroids.contains("R2-D2"), "In removing R2-D2, it should no longer exist in the Droids array.")
