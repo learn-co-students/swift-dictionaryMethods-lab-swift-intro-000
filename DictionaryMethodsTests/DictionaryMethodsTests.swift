@@ -62,7 +62,7 @@ class DictionaryMethodsTests: XCTestCase {
         XCTAssertEqual(villains, testClass.starWarsVillains)
         XCTAssertEqual(droids, testClass.starWarsDroids)
     }
-    
+
     func testCreateStarWarsGangsters() {
         testClass.createStarWarsGangsters()
         let gangsters = testClass.starWarsCharacters["Gangsters"] ?? []
