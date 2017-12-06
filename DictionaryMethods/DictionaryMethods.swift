@@ -65,14 +65,28 @@ class DictionaryMethods {
         }
     // Question #8
     func description(characters: [String:[String]]) -> String {
-        <#function body#>
+        var sentence = "--Star Wars Characters--"
+        for (type, names) in characters {
+            sentence += "\n\(type.uppercased())\n"
+    
+        for (index, names) in names.enumerated(){
+            sentence += "\n\(index+1). \(names)\n"
+            }
+            
+        }
+        return sentence
     }
     
     
     
     // Question #9
+    func addHearts() {
+        for (type, names) in starWarsCharacters {
+            for (index, name) in names.enumerated(){
+                starWarsCharacters[type]![index] = name.replacingOccurrences(of: "o", with: "❤️")
+            }
+        }
+    }
     
-    
-    
-    
+   
 }
