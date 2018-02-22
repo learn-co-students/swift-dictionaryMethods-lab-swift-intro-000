@@ -32,7 +32,7 @@ class DictionaryMethodsTests: XCTestCase {
     }
     
     func testStarWarsDroids() {
-        let expectedResult = ["R2-D2", "C-3P0", "IG-88", "BB-8"]
+        let expectedResult = ["R2-D2", "C-3PO", "IG-88", "BB-8"]
         XCTAssertEqual(testClass.starWarsDroids, expectedResult)
     }
     
@@ -81,7 +81,7 @@ class DictionaryMethodsTests: XCTestCase {
         XCTAssertTrue(description.contains("DROIDS"))
         XCTAssertTrue(description.contains("3. Han Solo"))
         XCTAssertTrue(description.contains("2. Emperor Palpatine"))
-        XCTAssertTrue(description.contains("2. C-3P0"))
+        XCTAssertTrue(description.contains("2. C-3PO"))
     }
     
     func testAddHearts() {
@@ -92,7 +92,7 @@ class DictionaryMethodsTests: XCTestCase {
         
         for (_, names) in testClass.starWarsCharacters {
             for name in names {
-                XCTAssertFalse(name.contains("o"), "\(name) should not contain the letter o.")
+                XCTAssertFalse(name.contains("ooo"), "\(name) should not contain the letter o.")
             }
         }
     }
