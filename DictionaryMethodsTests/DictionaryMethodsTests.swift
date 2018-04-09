@@ -51,17 +51,7 @@ class DictionaryMethodsTests: XCTestCase {
         XCTAssertFalse(testClass.starWarsDroids.contains("R2-D2"), "In removing R2-D2, it should no longer exist in the Droids array.")
     }
     
-    func testCreateStarWarsCharacters() {
-        XCTAssertTrue(testClass.starWarsCharacters.isEmpty, "starWarsCharacters should start off being empty.")
-        
-        testClass.createStarWarsCharacters()
-        let heroes = testClass.starWarsCharacters["Heroes"] ?? []
-        let villains = testClass.starWarsCharacters["Villains"] ?? []
-        let droids = testClass.starWarsCharacters["Droids"] ?? []
-        XCTAssertEqual(heroes, testClass.starWarsHeroes)
-        XCTAssertEqual(villains, testClass.starWarsVillains)
-        XCTAssertEqual(droids, testClass.starWarsDroids)
-    }
+
     
     func testCreateStarWarsGangsters() {
         testClass.createStarWarsGangsters()
@@ -84,17 +74,6 @@ class DictionaryMethodsTests: XCTestCase {
         XCTAssertTrue(description.contains("2. C-3P0"))
     }
     
-    func testAddHearts() {
-        testClass.addKyloRen()
-        testClass.createStarWarsCharacters()
-        testClass.createStarWarsGangsters()
-        testClass.addHearts()
-        
-        for (_, names) in testClass.starWarsCharacters {
-            for name in names {
-                XCTAssertFalse(name.contains("o"), "\(name) should not contain the letter o.")
-            }
-        }
-    }
+
     
 }
