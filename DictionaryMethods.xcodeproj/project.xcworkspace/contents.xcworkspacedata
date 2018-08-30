@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DictionaryMethods.xcodeproj">
+      location = "self:/Users/michaelsaladino/Google Drive/School/Flatiron/swift-dictionaryMethods-lab-swift-intro-000/DictionaryMethods.xcodeproj">
    </FileRef>
 </Workspace>

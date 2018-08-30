@@ -8,40 +8,79 @@
 
 import Foundation
 
-class DictionaryMethods {
+class DictionaryMethods{
     
-    // Questions #1, #2, #3, #6 and #7
+    var starWarsHeroes: [String] = [
+        "Luke Skywalker",
+        "Princess Leia",
+        "Han Solo",
+        "Rey"
+    ]
     
-
+    var starWarsVillains: [String] = [
+        "Darth Vader",
+        "Emperor Palpatine"
+    ]
     
-    // Question #4
-   
+    var starWarsDroids: [String] = [
+        "R2-D2",
+        "C-3P0",
+        "IG-88",
+        "BB-8"
+    ]
     
+    var starWarsGangsters: [String] = [
+        "Watto",
+        "Jabba the Hutt"
+    ]
     
+    var starWarsCharacters: [String : [String]] = [:]
     
-    // Question #5
-  
+    func createStarWarsCharacters() {
+        starWarsCharacters = [
+            "Heroes" : starWarsHeroes,
+            "Villains" : starWarsVillains,
+            "Droids" : starWarsDroids
+        ]
+    }
     
+    func createStarWarsGangsters() {
+        starWarsCharacters["Gangsters"] = starWarsGangsters
+    }
     
+    func addKyloRen() {
+        starWarsVillains.append("Kylo Ren")
+    }
     
-    // Question #6
-   
+    func remove(droid: String) -> Bool {
+        guard let removeIndex = starWarsDroids.index(of: droid) else {
+            return false
+        }
     
+        starWarsDroids.remove(at: removeIndex)
+        return true
+    }
     
+    func description(characters: [String: [String]]) -> String{
+        var sentence: String = ""
+        
+        for (type, name) in starWarsCharacters{
+            sentence += "\n\(type.uppercased())\n"
+            for (index, character) in name.enumerated(){
+                sentence += "\n\(index + 1). \(character)\n"
+            }
+        }
+        return sentence
+    }
     
-    // Question #7
-   
-    
-    
-    
-    // Question #8
-    
-    
-    
-    
-    // Question #9
-    
-    
-    
-    
+    func addHearts(){
+        for (types , (var names)) in starWarsCharacters{
+            for (index, name) in names.enumerated() {
+                names[index] = name.replacingOccurrences(of: "o", with: "♥️")
+            }
+            starWarsCharacters[types] = names
+        }
+        
+        // Need some help with this one. The unit test past but now starWarsCharacters is looped and added to 4 times. 
+    }
 }
